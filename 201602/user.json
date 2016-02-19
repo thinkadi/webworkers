@@ -1,0 +1,16 @@
+{
+    "name": "Mr. John Charles Doe",
+    "occupation": "Director",
+    "race": "Asian",
+    "nationality": "American",
+    "placeOfBirth": "Guntur",
+    "active": true,
+    "coutriesVisited": 1,
+    "dateOfBirth": Date("2065-29-02"),
+    "hobbies":["Reading", "Blogging", "Baseball", "Legos"],
+    "address": {
+        home:
+    }
+    
+    
+}
