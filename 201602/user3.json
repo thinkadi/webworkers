@@ -1,0 +1,33 @@
+{
+    "name": {
+        "first": "Steven",
+        "last": "Woo"
+    },
+    "occupation": "Vice-President",
+    "race": "Asian",
+    "nationality": "Chinese",
+    "placeOfBirth": "Seattle, WA",
+    "active": true,
+    "siblings": 0,
+    "hobbies": ["Photography"],
+    "address": {
+        "home": {
+            "current": {
+                "street": "212 Westlake Ave N",
+                "city": "Seattle",
+                "state": "WA",
+                "zip": "98109",
+                "start": Date("2002-07-04")
+            }
+        }
+    },
+    "phone": {
+        [
+            {
+                "type": "home",
+                "number": "(206) 673-9967"
+            }
+        ]
+    },
+    "email": "stevenwoo@pmail.com"
+}

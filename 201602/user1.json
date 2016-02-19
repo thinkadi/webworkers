@@ -50,7 +50,7 @@
             }
             ]
         },
-        "office": [
+        "work": [
             {
                 "street": "285 Fulton St",
                 "city": "New York",
@@ -82,6 +82,7 @@
                 "start": Date("1971-1-1"),
                 "end": Date("1980-12-31")
         }
-        ]
+        ],
+        "email": "johndoe@amail.com"
     }
 }
