@@ -1,0 +1,10 @@
+{
+    "name": "Mr. John Charles Doe",
+    "occupation": "Director",
+    "race": "White",
+    "nationality": "American",
+    "placeOfBirth": "Rapid City, SD",
+    "active": true,
+    "siblings": 2,
+    "dateOfBirth": Date("1965-02-29")
+}
