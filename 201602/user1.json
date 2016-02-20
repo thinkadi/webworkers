@@ -1,4 +1,5 @@
 {
+    "email": "johndoe@amail.com",
     "name": {
         "title": "Mr.",
         "first": "John",
@@ -82,7 +83,6 @@
                 "start": Date("1971-1-1"),
                 "end": Date("1980-12-31")
         }
-        ],
-        "email": "johndoe@amail.com"
+        ]
     }
 }

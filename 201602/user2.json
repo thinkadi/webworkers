@@ -1,4 +1,5 @@
 {
+    "email": "janesmith@email.com",
     "name": {
         "title": "Ms.",
         "first": "Jane",
@@ -60,6 +61,5 @@
                 "number": "(773) 523-2835"
             }
         ]
-    },
-    "email": "janesmith@email.com"
+    }
 }

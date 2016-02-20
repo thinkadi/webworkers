@@ -1,4 +1,5 @@
 {
+    "email": "stevenwoo@pmail.com",
     "name": {
         "first": "Steven",
         "last": "Woo"
@@ -28,6 +29,5 @@
                 "number": "(206) 673-9967"
             }
         ]
-    },
-    "email": "stevenwoo@pmail.com"
+    }
 }

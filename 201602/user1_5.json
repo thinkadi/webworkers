@@ -1,4 +1,5 @@
 {
+    "email": "johndoe@amail.com",
     "name": {
         "title": "Mr.",
         "first": "John",
@@ -27,6 +28,5 @@
             "state": "NY",
             "zip": "10007"
         }
-    },
-    "email": "johndoe@amail.com"
+    }
 }
