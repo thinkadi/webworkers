@@ -5,47 +5,47 @@ ORDER BY name               ... order modifier
 LIMIT 5                     ... limit modifier
 
 
-======================================================
+============================================================================================================
 
 
-db.users.find(              ... collection
-{"active": true},           ... query criteria
-{"name": 1, "email": 1, "address": 1})  ... projection
+db.users.find(                                 ... collection
+{"active": true},                              ... query criteria
+{"name": 1, "email": 1, "address": 1})         ... projection
 
-======================================================
+============================================================================================================
 
 db.users.find(              ... collection
 {"active": true},           ... query criteria
 {"address": 0})             ... projection
 
-======================================================
+============================================================================================================
 
-db.users.find(                      ... collection
-{"active": true},                   ... query criteria
-{"name": 1, "email" 1, address": 1, _id: 0})  ... projection
+db.users.find(                                  ... collection
+{"active": true},                               ... query criteria
+{"name": 1, "email" 1, address": 1, _id: 0})    ... projection
 
-======================================================
+============================================================================================================
 
-db.users.find(              ... collection
-{"active": true},           ... query criteria
-{"name": 1, "email" 1, address": 1})  ... projection
-.sort({"name":1})           ... order modifier
+db.users.find(                              ... collection
+{"active": true},                           ... query criteria
+{"name": 1, "email" 1, address": 1})        ... projection
+.sort({"name":1})                           ... order modifier
 
-======================================================
+============================================================================================================
 
-db.users.find(              ... collection
-{"active": true},           ... query criteria
-{"name": 1, "email" 1, address": 1})  ... projection
-.sort({"name":1})           ... order modifier
-.skip(5)                    ... skip modifier
+db.users.find(                              ... collection
+{"active": true},                           ... query criteria
+{"name": 1, "email" 1, address": 1})        ... projection
+.sort({"name":1})                           ... order modifier
+.skip(5)                                    ... skip modifier
 
-======================================================
+============================================================================================================
 
-db.users.find(              ... collection
-{"active": true},           ... query criteria
-{"name": 1, "email" 1, address": 1})  ... projection
-.sort({"name":-1})           ... order modifier
-.skip(5)                    ... skip modifier
-.limit(10)                  ... modifier
+db.users.find(                              ... collection
+{"active": true},                           ... query criteria
+{"name": 1, "email" 1, address": 1})        ... projection
+.sort({"name":-1})                          ... order modifier
+.skip(5)                                    ... skip modifier
+.limit(10)                                  ... modifier
 
-======================================================
+============================================================================================================
