@@ -16,12 +16,12 @@ db.users.find(              ... collection
 
 db.users.find(              ... collection
 {"active": true},           ... query criteria
-{"address": 0})  ... projection
+{"address": 0})             ... projection
 
 ======================================================
 
-db.users.find(              ... collection
-{"active": true},           ... query criteria
+db.users.find(                      ... collection
+{"active": true},                   ... query criteria
 {"name": 1, "address": 1, _id: 0})  ... projection
 
 ======================================================
