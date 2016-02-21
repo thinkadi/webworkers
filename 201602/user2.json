@@ -10,7 +10,7 @@
     "nationality": "British",
     "active": false,
     "siblings": 7,
-    "dateOfBirth": Date("1974-07-09"),
+    "dateOfBirth": new Date("1974-07-09"),
     "hobbies": ["Hiking", "Writing", "Volley Ball"],
     "luckyNumbers": [6],
     "address": {
@@ -20,7 +20,7 @@
                 "city": "Chicago",
                 "state": "IL",
                 "zip": "60623",
-                "start": Date("1996-01-31")
+                "start": new Date("1996-01-31")
             },
             "previous": []
         },
@@ -31,14 +31,14 @@
                 "state": "IL",
                 "zip": "60608",
                 "current": true,
-                "start": Date("1999-05-17")
+                "start": new Date("1999-05-17")
             },
             {
                 "street": "323 Chauncey St",
                 "city": "Brooklyn",
                 "state": "NY",
                 "zip": "11233",
-                "start": Date("1996-01-31")
+                "start": new Date("1996-01-31")
             }
         ]
     },

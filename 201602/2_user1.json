@@ -7,5 +7,5 @@
     "placeOfBirth": "Rapid City, SD",
     "active": true,
     "siblings": 2,
-    "dateOfBirth": Date("1965-02-29")
+    "dateOfBirth": new Date("1965-02-29")
 }
