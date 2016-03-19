@@ -1,0 +1,186 @@
+{
+    "email": "johndoe@amail.com",
+    "name": {
+        "title": "Mr.",
+        "first": "John",
+        "last": "Doe",
+        "middle": "Charles"
+    },
+    "occupation": "Director",
+    "race": "White",
+    "nationality": "American",
+    "placeOfBirth": "Rapid City, SD",
+    "active": true,
+    "siblings": 1,
+    "dateOfBirth": new Date("1965-02-29"),
+    "hobbies": ["Reading", "Blogging", "Baseball", "Legos"],
+    "luckyNumbers": [1, 3, 5, 9],
+    "address": {
+        "home": {
+            "current": {
+                "street": "323 Chauncey St",
+                "city": "Brooklyn",
+                "state": "NY",
+                "zip": "11233",
+                "start": new Date("1992-10-31")
+            },
+            "previous": [
+                {
+                    "street": "323 Chauncey St",
+                    "city": "Brooklyn",
+                    "state": "NY",
+                    "zip": "11233",
+                    "start": new Date("1982-1-1"),
+                    "end": new Date("1992-10-30")
+            },
+                {
+                    "street": "323 Chauncey St",
+                    "city": "Brooklyn",
+                    "state": "NY",
+                    "zip": "11233",
+                    "start": new Date("1977-1-1"),
+                    "end": new Date("1981-12-31")
+            },
+                {
+                    "street": "323 Chauncey St",
+                    "city": "Brooklyn",
+                    "state": "NY",
+                    "zip": "11233",
+                    "start": new Date("1972-1-1"),
+                    "end": new Date("1976-12-31")
+            }
+            ]
+        },
+        "work": [
+            {
+                "street": "285 Fulton St",
+                "city": "New York",
+                "state": "NY",
+                "zip": "10007",
+                "current": true,
+                "start": new Date("1991-1-1")
+        },
+            {
+                "street": "323 Chauncey St",
+                "city": "Brooklyn",
+                "state": "NY",
+                "zip": "11233",
+                "current": true,
+                "start": new Date("1989-1-1")
+        }, {
+                "street": "1855 Broadway",
+                "city": "New York",
+                "state": "NY",
+                "zip": "10023",
+                "current": false,
+                "start": new Date("1981-1-1"),
+                "end": new Date("1990-12-31")
+        }, {
+                "street": "1 Police Plaza Path",
+                "city": "New York",
+                "state": "NY",
+                "zip": "10007",
+                "start": new Date("1971-1-1"),
+                "end": new Date("1980-12-31")
+        }
+        ]
+    }
+}
+{
+    "email": "janesmith@email.com",
+    "name": {
+        "title": "Ms.",
+        "first": "Jane",
+        "last": "Smith",
+        "middle": "Williams"
+    },
+    "occupation": "President",
+    "nationality": "British",
+    "active": false,
+    "siblings": 7,
+    "dateOfBirth": new Date("1974-07-09"),
+    "hobbies": ["Hiking", "Writing", "Volley Ball"],
+    "luckyNumbers": [6],
+    "address": {
+        "home": {
+            "current": {
+                "street": "3101 W 26th St",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60623",
+                "start": new Date("1996-01-31")
+            },
+            "previous": []
+        },
+        "work": [
+            {
+                "street": "2700 S California Ave",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60608",
+                "current": true,
+                "start": new Date("1999-05-17")
+            },
+            {
+                "street": "323 Chauncey St",
+                "city": "Brooklyn",
+                "state": "NY",
+                "zip": "11233",
+                "start": new Date("1996-01-31")
+            }
+        ]
+    },
+    "phone": {
+        [
+            {
+                "type": "cell",
+                "number": "(773) 674-7100"
+            },
+            {
+                "type": "home",
+                "number": "(773) 247-2599"
+            },
+            {
+                "type": "home",
+                "number": "(312) 829-5055"
+            },
+            {
+                "type": "work",
+                "number": "(773) 523-2835"
+            }
+        ]
+    }
+}
+{
+    "email": "stevenwoo@pmail.com",
+    "name": {
+        "first": "Steven",
+        "last": "Woo"
+    },
+    "occupation": "Vice-President",
+    "race": "Asian",
+    "nationality": "Chinese",
+    "placeOfBirth": "Seattle, WA",
+    "active": true,
+    "siblings": 0,
+    "hobbies": ["Photography"],
+    "address": {
+        "home": {
+            "current": {
+                "street": "212 Westlake Ave N",
+                "city": "Seattle",
+                "state": "WA",
+                "zip": "98109",
+                "start": new Date("2002-07-04")
+            }
+        }
+    },
+    "phone": {
+        [
+            {
+                "type": "home",
+                "number": "(206) 673-9967"
+            }
+        ]
+    }
+}
