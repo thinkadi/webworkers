@@ -1,4 +1,4 @@
-function insertBillionNumbers() {
+function insertBillionDocuments() {
     for (i = 0; i < 1000; i++) {
         for (j = 0; j < 1000; j++) {
             for (k = 0; k < 1000; k++) {
@@ -12,4 +12,4 @@ function insertBillionNumbers() {
     }
 }
 
-insertBillionNumbers();
+insertBillionDocuments();
