@@ -6,4 +6,4 @@ fs.readFile("./files/welcome.txt", function (err, data) {
     } else {
         console.log(data.toString());
     }
-})
+});
