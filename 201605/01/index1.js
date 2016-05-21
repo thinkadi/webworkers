@@ -1,7 +1,5 @@
-var http = require("http");
-var server = http.createServer(function (req, res) {
-    res.end("Hello World!");
-});
-server.listen(3000, function () {
-    console.log("Listening on 3000")
+var fs = require('fs');
+
+fs.readFile("message1.txt", function (err, data) {
+    console.log(data.toString());
 });
