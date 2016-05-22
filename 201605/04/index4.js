@@ -1,7 +1,7 @@
 var http = require("http");
 var url = require("url");
+var items = [];
 var server = http.createServer(function (req, res) {
-    var items = [];
     switch (req.method) {
     case "GET":
         var path = url.parse(req.url).pathname;
