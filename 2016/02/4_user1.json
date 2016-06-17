@@ -1,0 +1,18 @@
+{
+    "email": "johndoe@amail.com",
+    "name": {
+        "title": "Mr.",
+        "first": "John",
+        "last": "Doe",
+        "middle": "Charles"
+    },
+    "occupation": "Director",
+    "race": "White",
+    "nationality": "American",
+    "placeOfBirth": "Rapid City, SD",
+    "active": true,
+    "siblings": 2,
+    "dateOfBirth": new Date("1965-02-29"),
+    "hobbies": ["Reading", "Blogging", "Baseball", "Legos"],
+    "luckyNumbers": [1, 3, 5, 9]
+}

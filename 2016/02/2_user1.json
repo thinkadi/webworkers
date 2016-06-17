@@ -1,0 +1,11 @@
+{
+    "email": "johndoe@amail.com",
+    "name": "Mr. John Charles Doe",
+    "occupation": "Director",
+    "race": "White",
+    "nationality": "American",
+    "placeOfBirth": "Rapid City, SD",
+    "active": true,
+    "siblings": 2,
+    "dateOfBirth": new Date("1965-03-29")
+}

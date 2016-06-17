@@ -1,0 +1,65 @@
+{
+    "email": "janesmith@email.com",
+    "name": {
+        "title": "Ms.",
+        "first": "Jane",
+        "last": "Smith",
+        "middle": "Williams"
+    },
+    "occupation": "President",
+    "nationality": "British",
+    "active": false,
+    "siblings": 7,
+    "dateOfBirth": new Date("1974-07-09"),
+    "hobbies": ["Hiking", "Writing", "Volley Ball"],
+    "luckyNumbers": [6],
+    "address": {
+        "home": {
+            "current": {
+                "street": "3101 W 26th St",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60623",
+                "start": new Date("1996-01-31")
+            },
+            "previous": []
+        },
+        "work": [
+            {
+                "street": "2700 S California Ave",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60608",
+                "current": true,
+                "start": new Date("1999-05-17")
+            },
+            {
+                "street": "323 Chauncey St",
+                "city": "Brooklyn",
+                "state": "NY",
+                "zip": "11233",
+                "start": new Date("1996-01-31")
+            }
+        ]
+    },
+    "phone": {
+        [
+            {
+                "type": "cell",
+                "number": "(773) 674-7100"
+            },
+            {
+                "type": "home",
+                "number": "(773) 247-2599"
+            },
+            {
+                "type": "home",
+                "number": "(312) 829-5055"
+            },
+            {
+                "type": "work",
+                "number": "(773) 523-2835"
+            }
+        ]
+    }
+}
