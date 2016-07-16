@@ -129,9 +129,50 @@ app.get("/items", passport.authenticate('bearer', {
     });
 });
 
+app.post("/items", passport.authenticate('bearer', {
+    session: false
+}), bodyParser, function (req, res) {
+
+    var item = {};
+    item.name = req.body.name;
+    item.quantity = req.body.quantity;
+    item.store = req.body.store;
+    item.user = req.user._id;
+
+    if (!item.name) {
+        res.status(status.BAD_REQUEST).send("Name cannot be blank");
+    } else if (!item.quantity) {
+        res.status(status.BAD_REQUEST).send("Quantity cannot be blank");
+    } else if (!item.store) {
+        res.status(status.BAD_REQUEST).send("Store cannot be blank");
+    } else {
+        itemsColl.insertOne(item, function (err, result) {
+            if (err) {
+                res.status(status.INTERNAL_SERVER_ERROR).send();
+            } else {
+                var returnDoc = {};
+                returnDoc.id = result.insertedId;
+                res.status(status.CREATED).send(returnDoc);
+            }
+        });
+    }
+});
+
 app.listen(3000, function () {
     console.log("Listening!");
 });
+
+/*
+Sample Item
+
+{
+    "name":"Milk",
+    "quantity":"2 Gallons",
+    "store":"Costco"
+}
+
+*/
+
 
 /* Use Bearer Token
 
