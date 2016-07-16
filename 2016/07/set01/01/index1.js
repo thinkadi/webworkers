@@ -114,6 +114,16 @@ app.get("/auth/bearer-token-test", passport.authenticate('bearer', {
         res.send("Your Bearer Token is valid. Your email address in the system is: " + req.user.email);
     });
 
+app.get("/items", passport.authenticate('bearer', {
+    session: false
+}), function (req, res) {
+    itemsColl.find({
+        "user": req.user._id
+    }).toArray(function (err, docs) {
+        res.status(status.OK).send(docs);
+    });
+});
+
 app.listen(3000, function () {
     console.log("Listening!");
 });
