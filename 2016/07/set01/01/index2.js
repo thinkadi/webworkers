@@ -114,7 +114,7 @@ app.get("/auth/bearer-token-test", passport.authenticate('bearer', {
         res.send("Your Bearer Token is valid. Your email address in the system is: " + req.user.email);
     });
 
-app.get("/items", passport.authenticate('bearer', {
+app.get("/api/items", passport.authenticate('bearer', {
     session: false
 }), function (req, res) {
     itemsColl.find({
@@ -137,7 +137,7 @@ app.get("/items", passport.authenticate('bearer', {
     });
 });
 
-app.post("/items", passport.authenticate('bearer', {
+app.post("/api/items", passport.authenticate('bearer', {
     session: false
 }), bodyParser, function (req, res) {
 
