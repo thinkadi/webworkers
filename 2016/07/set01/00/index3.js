@@ -106,7 +106,7 @@ app.post("/auth/bearer-token", bodyParser, function (req, res) {
     }
 });
 
-app.post("/auth/bearer-token-test", passport.authenticate('bearer', {
+app.get("/auth/bearer-token-test", passport.authenticate('bearer', {
         session: false
     }),
     function (req, res) {
