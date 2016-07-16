@@ -2,8 +2,6 @@ var express = require('express');
 var status = require('http-status');
 var bodyParser = require('body-parser').json();
 var MongoClient = require('mongodb').MongoClient;
-var passport = require('passport');
-var BearerStrategy = require('passport-http-bearer').Strategy;
 var uuid = require('uuid');
 
 var mongodbUrl = "mongodb://localhost:27017/shoppinglist"
@@ -61,9 +59,12 @@ app.post("/auth/bearer-token", bodyParser, function (req, res) {
             } else if (!doc) {
                 res.status(status.NOT_FOUND).send("Cannot find this Email/Password combination");
             } else {
-
-                var bearerToken = uuid.v4();
-
+                var bearerToken = {};
+                bearerToken.token = uuid.v4();
+                bearerToken.generated = new Date();
+                bearerToken.validityInSeconds = 3600;
+                bearerToken.expiry = new Date();
+                bearerToken.expiry.setSeconds(bearerToken.expiry.getSeconds() + bearerToken.validityInSeconds);
                 usersColl.updateOne(doc, {
                     "$set": {
                         "bearerToken": bearerToken
@@ -85,3 +86,10 @@ app.post("/auth/bearer-token", bodyParser, function (req, res) {
 app.listen(3000, function () {
     console.log("Listening!");
 });
+
+/* Sample User
+{
+    "email":"email@email.com",
+    "password":"password"
+}
+*/

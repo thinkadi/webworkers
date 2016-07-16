@@ -47,7 +47,7 @@ app.listen(3000, function () {
 });
 
 
-/*
+/* Sample User
 {
     "email":"email@email.com",
     "password":"password",
@@ -58,4 +58,8 @@ app.listen(3000, function () {
 }
 */
 
-// Please create a unique index on "email" in your collection.
+/* Please create a unique index on "email" in your collection.
+
+db.users.createIndex({"email":1}, {"unique":true});
+
+*/
