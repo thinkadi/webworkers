@@ -5,6 +5,7 @@ var MongoClient = require('mongodb').MongoClient;
 var uuid = require('uuid');
 var passport = require('passport');
 var BearerStrategy = require('passport-http-bearer').Strategy;
+var ObjectID = require('mongodb').ObjectID
 
 var mongodbUrl = "mongodb://localhost:27017/shoppinglist"
 
@@ -164,6 +165,29 @@ app.post("/items", passport.authenticate('bearer', {
             }
         });
     }
+});
+
+app.get("/items/:id", passport.authenticate('bearer', {
+    session: false
+}), function (req, res) {
+    itemsColl.findOne({
+        "_id": new ObjectID(req.params.id)
+    }, function (err, doc) {
+        if (err) {
+            res.status(status.INTERNAL_SERVER_ERROR).send();
+        } else if (!doc) {
+            res.status(status.NOT_FOUND).send("Item not found");
+        } else if (!doc.user.equals(req.user._id)) {
+            res.status(status.FORBIDDEN).send("You are forbidden from viewing this item");
+        } else {
+            var returnDoc = {};
+            returnDoc.id = doc._id;
+            returnDoc.name = doc.name;
+            returnDoc.quantity = doc.quantity;
+            returnDoc.store = doc.store;
+            res.status(status.OK).send(returnDoc);
+        }
+    });
 });
 
 app.listen(3000, function () {

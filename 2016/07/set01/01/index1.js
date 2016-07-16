@@ -120,12 +120,20 @@ app.get("/items", passport.authenticate('bearer', {
     itemsColl.find({
         "user": req.user._id
     }, {
-        "_id": 0,
         "name": 1,
         "quantity": 1,
         "store": 1
     }).toArray(function (err, docs) {
-        res.status(status.OK).send(docs);
+        var returnDocs = [];
+        for (i = 0; i < docs.length; i++) {
+            var returnDoc = {};
+            returnDoc.id = docs[i]._id;
+            returnDoc.name = docs[i].name;
+            returnDoc.quantity = docs[i].quantity;
+            returnDoc.store = docs[i].store;
+            returnDocs.push(returnDoc);
+        }
+        res.status(status.OK).send(returnDocs);
     });
 });
 
