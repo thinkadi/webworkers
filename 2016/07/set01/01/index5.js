@@ -258,18 +258,6 @@ app.listen(3000, function () {
     console.log("Listening!");
 });
 
-/*
-Sample Item
-
-{
-    "name":"Milk",
-    "quantity":"2 Gallons",
-    "store":"Costco"
-}
-
-*/
-
-
 /* Use Bearer Token
 
 Request Header:
