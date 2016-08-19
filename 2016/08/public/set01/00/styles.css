@@ -21,17 +21,3 @@ footer {
     border-width: 1px;
     padding: 2px 12px;
 }
-
-nav ul li {
-    list-style: none;
-    margin: 4px 0px;
-}
-
-nav ul li a {
-    cursor: pointer;
-    color: blue;
-}
-
-.placeholder {
-    font-style: italic;
-}
