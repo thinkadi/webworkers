@@ -10,6 +10,12 @@ app.directive("home", function () {
     };
 });
 
+app.directive("signup", function () {
+    return {
+        templateUrl: 'app/templates/signup.html'
+    };
+});
+
 app.directive("login", function () {
     return {
         templateUrl: 'app/templates/login.html'

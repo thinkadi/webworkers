@@ -9,6 +9,13 @@ app.config(function ($routeProvider) {
 
 app.config(function ($routeProvider) {
     $routeProvider.
+    when('/signup', {
+        templateUrl: 'app/views/signup.html'
+    });
+});
+
+app.config(function ($routeProvider) {
+    $routeProvider.
     when('/login', {
         templateUrl: 'app/views/login.html'
     });
