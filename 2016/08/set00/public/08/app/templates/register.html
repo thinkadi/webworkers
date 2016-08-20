@@ -2,19 +2,19 @@
     <h2>Register</h2>
     <div class="field">
         <label>Email</label>
-        <input type="email">
+        <input type="email" ng-model="user.email">
     </div>
     <div class="field">
         <label>Password</label>
-        <input type="password">
+        <input type="password" ng-model="user.password">
     </div>
     <div class="field">
         <label>First Name</label>
-        <input type="text">
+        <input type="text" ng-model="user.name.first">
     </div>
     <div class="field">
         <label>Last Name</label>
-        <input type="text">
+        <input type="text" ng-model="user.name.last">
     </div>
-    <button type="button">Register</button>
+    <button type="button" ng-click="register()">Register</button>
 </section>

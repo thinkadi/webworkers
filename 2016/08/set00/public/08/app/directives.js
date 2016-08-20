@@ -12,7 +12,8 @@ app.directive("home", function () {
 
 app.directive("register", function () {
     return {
-        templateUrl: 'app/templates/register.html'
+        templateUrl: 'app/templates/register.html',
+        controller: 'registerController'
     };
 });
 
