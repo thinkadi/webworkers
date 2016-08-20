@@ -1,0 +1,45 @@
+header {
+    margin: 12px 0px;
+    border-color: black;
+    border-style: dashed;
+    border-width: 1px;
+    padding: 2px 12px;
+}
+
+main {
+    margin: 12px 0px;
+    border-color: black;
+    border-style: dashed;
+    border-width: 1px;
+    padding: 2px 12px;
+}
+
+footer {
+    margin: 12px 0px;
+    border-color: black;
+    border-style: dashed;
+    border-width: 1px;
+    padding: 2px 12px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    list-style: none;
+    margin: 4px 0px;
+}
+
+nav ul li a {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    margin: 0px;
+    padding: 0px;
+}
+
+.placeholder {
+    font-style: italic;
+    padding: 10px;
+}
