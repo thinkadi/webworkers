@@ -26,6 +26,7 @@ nav ul {
     margin: 0;
     padding: 0;
 }
+
 nav ul li {
     list-style: none;
     margin: 4px 0px;
@@ -42,4 +43,20 @@ nav ul li a {
 .placeholder {
     font-style: italic;
     padding: 10px;
+}
+
+label {
+    margin: 0 6px 0 0;
+}
+
+label::after {
+    content: ":"
+}
+
+button {
+    margin: 12px 0 12px 0;
+}
+
+.field {
+    margin: 12px 0 0 0;
 }
