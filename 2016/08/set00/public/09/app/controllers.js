@@ -19,5 +19,9 @@ app.controller('registerController', ['$rootScope', '$scope', '$route', function
         } else {
             $scope.error.message = null;
         }
+
+        // Code to submit Registration to server
+
+        // Code to route the user to Home view after successful registration
     };
 }]);
