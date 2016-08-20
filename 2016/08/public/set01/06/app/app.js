@@ -9,8 +9,8 @@ app.config(function ($routeProvider) {
 
 app.config(function ($routeProvider) {
     $routeProvider.
-    when('/signup', {
-        templateUrl: 'app/views/signup.html'
+    when('/register', {
+        templateUrl: 'app/views/register.html'
     });
 });
 

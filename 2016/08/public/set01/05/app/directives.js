@@ -10,9 +10,9 @@ app.directive("home", function () {
     };
 });
 
-app.directive("signup", function () {
+app.directive("register", function () {
     return {
-        templateUrl: 'app/templates/signup.html'
+        templateUrl: 'app/templates/register.html'
     };
 });
 
