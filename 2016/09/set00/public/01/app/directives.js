@@ -19,7 +19,8 @@ app.directive("register", function () {
 
 app.directive("login", function () {
     return {
-        templateUrl: 'app/templates/login.html'
+        templateUrl: 'app/templates/login.html',
+        controller: 'loginController'
     };
 });
 

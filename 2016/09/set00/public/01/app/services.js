@@ -24,4 +24,24 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
         }
         return deferred.promise;
     };
+
+    this.login = function (user) {
+        var deferred = $q.defer();
+        if (!user.email) {
+            deferred.reject("Email cannot be blank");
+        } else if (!user.password) {
+            deferred.reject("Password cannot be blank");
+        } else {
+            var registerUrl = authUrl + "/bearer-token";
+            $http.post(registerUrl, user)
+                .success(function (response) {
+                    deferred.resolve(response);
+                    $rootScope.bearerToken = response.bearerToken;
+                })
+                .error(function (err, status) {
+                    deferred.reject(err);
+                });
+        }
+        return deferred.promise;
+    };
 }]);
