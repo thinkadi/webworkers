@@ -3,11 +3,11 @@
     <form ng-submit="login()">
         <div class="field">
             <label>Email</label>
-            <input type="email" ng-model="user.email">
+            <input type="email" ng-model="loginUser.email">
         </div>
         <div class="field">
             <label>Password</label>
-            <input type="password" ng-model="user.password">
+            <input type="password" ng-model="loginUser.password">
         </div>
         <p ng-bind="error.message" class="error-message"></p>
         <button type="submit">Login</button>

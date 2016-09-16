@@ -1,8 +1,8 @@
 app.controller('registerController', ['$rootScope', '$scope', '$location', 'authService', function ($rootScope, $scope, $location, authService) {
-    $scope.user = {};
+    $scope.registerUser = {};
     $scope.error = {};
     $scope.register = function () {
-        authService.register($scope.user)
+        authService.register($scope.registerUser)
             .then(function (response) {
                 $location.path("/");
             }, function (errorMessage) {
