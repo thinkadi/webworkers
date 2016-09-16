@@ -27,6 +27,12 @@ app.controller('loginController', ['$rootScope', '$scope', '$location', 'authSer
     }]);
 
 app.controller('navBarController', ['$rootScope', '$scope', '$location', 'authService', function ($rootScope, $scope, $location, authService) {
+
+    if (authService.getBearerToken()) {
+        $rootScope.user = {};
+        $rootScope.user.loggedIn = true;
+    }
+
     $scope.logout = function () {
         authService.logout()
             .then(function (response) {

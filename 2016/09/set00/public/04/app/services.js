@@ -1,6 +1,10 @@
 app.service('authService', ['$http', '$q', function ($http, $q) {
 
     var bearerToken;
+    var bearerTokenString = localStorage.getItem("bearerTokenString");
+    if (bearerTokenString) {
+        bearerToken = JSON.parse(bearerTokenString);
+    }
 
     var authUrl = "/auth";
     this.register = function (user) {
@@ -40,6 +44,7 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
                 .success(function (response) {
                     deferred.resolve(response);
                     bearerToken = response.bearerToken;
+                    localStorage.setItem("bearerTokenString", JSON.stringify(bearerToken));
                 })
                 .error(function (err, status) {
                     deferred.reject(err);
@@ -50,8 +55,14 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
 
     this.logout = function () {
         var deferred = $q.defer();
+        localStorage.removeItem("bearerTokenString");
         bearerToken = null;
         deferred.resolve("User logged out successfully");
         return deferred.promise;
     };
+
+    this.getBearerToken = function () {
+        return bearerToken;
+    }
+
 }]);
