@@ -25,3 +25,13 @@ app.controller('loginController', ['$rootScope', '$scope', '$location', 'authSer
             });
     };
     }]);
+
+app.controller('navBarController', ['$rootScope', '$scope', '$location', 'authService', function ($rootScope, $scope, $location, authService) {
+    $scope.logout = function () {
+        authService.logout()
+            .then(function (response) {
+                $rootScope.user.loggedIn = false;
+                $location.path("/");
+            });
+    };
+    }]);

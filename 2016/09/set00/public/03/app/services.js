@@ -47,4 +47,11 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
         }
         return deferred.promise;
     };
+
+    this.logout = function () {
+        var deferred = $q.defer();
+        bearerToken = null;
+        deferred.resolve("User logged out successfully");
+        return deferred.promise;
+    };
 }]);
