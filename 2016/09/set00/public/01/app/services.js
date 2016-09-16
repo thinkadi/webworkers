@@ -1,4 +1,7 @@
 app.service('authService', ['$http', '$q', function ($http, $q) {
+
+    var bearerToken;
+
     var authUrl = "/auth";
     this.register = function (user) {
         var deferred = $q.defer();
@@ -36,7 +39,7 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
             $http.post(registerUrl, user)
                 .success(function (response) {
                     deferred.resolve(response);
-                    $rootScope.bearerToken = response.bearerToken;
+                    bearerToken = response.bearerToken;
                 })
                 .error(function (err, status) {
                     deferred.reject(err);
