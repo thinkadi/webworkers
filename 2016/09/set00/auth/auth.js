@@ -45,7 +45,7 @@ module.exports = function (collections) {
         } else {
             usersColl.insertOne(req.body, function (err) {
                 if (err) {
-                    res.status(status.INTERNAL_SERVER_ERROR).send();
+                    res.status(status.INTERNAL_SERVER_ERROR).send("Server Error");
                 } else {
                     res.status(status.CREATED).send();
                 }
