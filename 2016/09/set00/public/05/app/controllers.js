@@ -4,7 +4,14 @@ app.controller('registerController', ['$rootScope', '$scope', '$location', 'auth
     $scope.register = function () {
         authService.register($scope.registerUser)
             .then(function (response) {
-                $location.path("/");
+                var loginUser = {};
+                loginUser.email = $scope.registerUser.email;
+                loginUser.password = $scope.registerUser.password;
+                authService.login(loginUser)
+                    .then(function (response) {
+                        $rootScope.user = authService.getUser();
+                        $location.path("/");
+                    });
             }, function (errorMessage) {
                 $scope.error.message = errorMessage;
             });
