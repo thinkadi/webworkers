@@ -17,8 +17,7 @@ app.controller('loginController', ['$rootScope', '$scope', '$location', 'authSer
     $scope.login = function () {
         authService.login($scope.loginUser)
             .then(function (response) {
-                $rootScope.user = {};
-                $rootScope.user.loggedIn = true;
+                $rootScope.user = authService.getUser();
                 $location.path("/");
             }, function (errorMessage) {
                 $scope.error.message = errorMessage;
@@ -28,16 +27,11 @@ app.controller('loginController', ['$rootScope', '$scope', '$location', 'authSer
 
 app.controller('navBarController', ['$rootScope', '$scope', '$location', 'authService', function ($rootScope, $scope, $location, authService) {
 
-    if (authService.getBearerToken()) {
-        $rootScope.user = {};
-        $rootScope.user.loggedIn = true;
-    }
+    $rootScope.user = authService.getUser();
 
     $scope.logout = function () {
-        authService.logout()
-            .then(function (response) {
-                $rootScope.user.loggedIn = false;
-                $location.path("/");
-            });
+        authService.logout();
+        $rootScope.user = authService.getUser();
+        $location.path("/");
     };
     }]);
