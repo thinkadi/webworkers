@@ -1,0 +1,23 @@
+<section>
+    <h2>Register</h2>
+    <form ng-submit="register()">
+        <div class="field">
+            <label>Email</label>
+            <input type="email" ng-model="user.email">
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" ng-model="user.password">
+        </div>
+        <div class="field">
+            <label>First Name</label>
+            <input type="text" ng-model="user.name.first">
+        </div>
+        <div class="field">
+            <label>Last Name</label>
+            <input type="text" ng-model="user.name.last">
+        </div>
+        <p ng-bind="error.message" class="error-message"></p>
+        <button type="submit">Register</button>
+    </form>
+</section>
