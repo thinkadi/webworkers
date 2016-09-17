@@ -8,6 +8,9 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
     }
 
     var authUrl = "/auth";
+    var apiUrl = "/api"
+    var usersUrl = apiUrl + "/users";
+
     this.register = function (registerUser) {
         var deferred = $q.defer();
         if (!registerUser.email) {
@@ -65,6 +68,28 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
 
     this.getUser = function () {
         return user;
+    };
+
+    this.loadUserInfo = function () {
+        var deferred = $q.defer();
+        var thisUserUrl = usersUrl + "/me";
+        $http({
+                method: 'GET',
+                url: thisUserUrl,
+                headers: {
+                    "Authorization": "Bearer" + " " + user.bearerToken.token
+                }
+            })
+            .success(function (response) {
+                deferred.resolve(response);
+                user.email = response.email;
+                user.name = response.name;
+                localStorage.setItem("userString", JSON.stringify(user));
+            })
+            .error(function (err, status) {
+                deferred.reject(err);
+            });
+        return deferred.promise;
     };
 
 }]);

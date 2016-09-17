@@ -9,8 +9,11 @@ app.controller('registerController', ['$rootScope', '$scope', '$location', 'auth
                 loginUser.password = $scope.registerUser.password;
                 authService.login(loginUser)
                     .then(function (response) {
-                        $rootScope.user = authService.getUser();
-                        $location.path("/");
+                        authService.loadUserInfo()
+                            .then(function (response) {
+                                $rootScope.user = authService.getUser();
+                                $location.path("/");
+                            });
                     });
             }, function (errorMessage) {
                 $scope.error.message = errorMessage;
@@ -24,8 +27,11 @@ app.controller('loginController', ['$rootScope', '$scope', '$location', 'authSer
     $scope.login = function () {
         authService.login($scope.loginUser)
             .then(function (response) {
-                $rootScope.user = authService.getUser();
-                $location.path("/");
+                authService.loadUserInfo()
+                    .then(function (response) {
+                        $rootScope.user = authService.getUser();
+                        $location.path("/");
+                    });
             }, function (errorMessage) {
                 $scope.error.message = errorMessage;
             });
