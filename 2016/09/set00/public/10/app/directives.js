@@ -38,3 +38,10 @@ app.directive("myListAdd", function () {
         controller: 'myListAddController'
     };
 });
+
+app.directive("myListEdit", function () {
+    return {
+        templateUrl: 'app/templates/my-list-edit.html',
+        controller: 'myListEditController'
+    };
+});

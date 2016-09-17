@@ -147,8 +147,7 @@
                     url: itemUrl,
                     headers: {
                         "Authorization": "Bearer" + " " + user.bearerToken.token
-                    },
-                    data: item
+                    }
                 })
                 .success(function (response) {
                     deferred.resolve(response);

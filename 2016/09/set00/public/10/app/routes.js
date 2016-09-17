@@ -32,3 +32,10 @@ app.config(function ($routeProvider) {
         templateUrl: 'app/views/my-list-add.html'
     });
 });
+
+app.config(function ($routeProvider) {
+    $routeProvider.
+    when('/my-list-edit/:itemId', {
+        templateUrl: 'app/views/my-list-edit.html'
+    });
+});

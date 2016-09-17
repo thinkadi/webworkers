@@ -86,3 +86,26 @@ app.controller('myListAddController', ['$rootScope', '$scope', '$location', 'ite
             });
     }
 }]);
+
+app.controller('myListEditController', ['$rootScope', '$scope', '$location', '$routeParams', 'itemsService', function ($rootScope, $scope, $location, $routeParams, itemsService) {
+    $scope.editItem = {};
+    $scope.error = {};
+
+    $scope.editItem.id = $routeParams.itemId;
+
+    itemsService.getItem($scope.editItem)
+        .then(function (response) {
+            $scope.editItem = response;
+        }, function (errorMessage) {
+            $scope.error.message = errorMessage;
+        });
+
+    $scope.edit = function () {
+        itemsService.putItem($scope.editItem)
+            .then(function (response) {
+                $location.path("/my-list");
+            }, function (errorMessage) {
+                $scope.error.message = errorMessage;
+            });
+    }
+}]);

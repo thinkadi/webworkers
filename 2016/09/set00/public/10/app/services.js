@@ -120,11 +120,50 @@
             return deferred.promise;
         };
 
+        this.getItem = function (item) {
+            var deferred = $q.defer();
+            var itemUrl = itemsUrl + "/" + item.id;
+            $http({
+                    method: 'GET',
+                    url: itemUrl,
+                    headers: {
+                        "Authorization": "Bearer" + " " + user.bearerToken.token
+                    }
+                })
+                .success(function (response) {
+                    deferred.resolve(response);
+                })
+                .error(function (err, status) {
+                    deferred.reject(err);
+                });
+            return deferred.promise;
+        };
+
         this.postItem = function (item) {
             var deferred = $q.defer();
             $http({
                     method: 'POST',
                     url: itemsUrl,
+                    headers: {
+                        "Authorization": "Bearer" + " " + user.bearerToken.token
+                    },
+                    data: item
+                })
+                .success(function (response) {
+                    deferred.resolve(response);
+                })
+                .error(function (err, status) {
+                    deferred.reject(err);
+                });
+            return deferred.promise;
+        };
+
+        this.putItem = function (item) {
+            var deferred = $q.defer();
+            var itemUrl = itemsUrl + "/" + item.id;
+            $http({
+                    method: 'PUT',
+                    url: itemUrl,
                     headers: {
                         "Authorization": "Bearer" + " " + user.bearerToken.token
                     },
@@ -147,8 +186,7 @@
                     url: itemUrl,
                     headers: {
                         "Authorization": "Bearer" + " " + user.bearerToken.token
-                    },
-                    data: item
+                    }
                 })
                 .success(function (response) {
                     deferred.resolve(response);
