@@ -1,4 +1,20 @@
 {
+    "name": "shoppinglist",
+    "version": "1.0.0",
+    "description": "Web Workers Shopping List",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "private": true,
+    "engines": {
+        "node": "5.4.0"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
     "dependencies": {
         "express": "4.13.4",
         "http-status": "0.2.0",
