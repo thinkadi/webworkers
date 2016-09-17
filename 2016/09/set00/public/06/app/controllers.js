@@ -1,4 +1,4 @@
-app.controller('registerController', ['$rootScope', '$scope', '$location', 'authService', function ($rootScope, $scope, $location, authService) {
+app.controller('registerController', ['$rootScope', '$scope', '$location', 'authService', 'usersService', function ($rootScope, $scope, $location, authService, usersService) {
     $scope.registerUser = {};
     $scope.error = {};
     $scope.register = function () {
@@ -9,9 +9,9 @@ app.controller('registerController', ['$rootScope', '$scope', '$location', 'auth
                 loginUser.password = $scope.registerUser.password;
                 authService.login(loginUser)
                     .then(function (response) {
-                        authService.loadUserInfo()
+                        usersService.loadUserInfo()
                             .then(function (response) {
-                                $rootScope.user = authService.getUser();
+                                $rootScope.user = usersService.getUser();
                                 $location.path("/");
                             });
                     });
@@ -21,15 +21,15 @@ app.controller('registerController', ['$rootScope', '$scope', '$location', 'auth
     };
     }]);
 
-app.controller('loginController', ['$rootScope', '$scope', '$location', 'authService', function ($rootScope, $scope, $location, authService) {
+app.controller('loginController', ['$rootScope', '$scope', '$location', 'authService', 'usersService', function ($rootScope, $scope, $location, authService, usersService) {
     $scope.loginUser = {};
     $scope.error = {};
     $scope.login = function () {
         authService.login($scope.loginUser)
             .then(function (response) {
-                authService.loadUserInfo()
+                usersService.loadUserInfo()
                     .then(function (response) {
-                        $rootScope.user = authService.getUser();
+                        $rootScope.user = usersService.getUser();
                         $location.path("/");
                     });
             }, function (errorMessage) {
@@ -38,13 +38,13 @@ app.controller('loginController', ['$rootScope', '$scope', '$location', 'authSer
     };
     }]);
 
-app.controller('navBarController', ['$rootScope', '$scope', '$location', 'authService', function ($rootScope, $scope, $location, authService) {
+app.controller('navBarController', ['$rootScope', '$scope', '$location', 'authService', 'usersService', function ($rootScope, $scope, $location, authService, usersService) {
 
-    $rootScope.user = authService.getUser();
+    $rootScope.user = usersService.getUser();
 
     $scope.logout = function () {
         authService.logout();
-        $rootScope.user = authService.getUser();
+        $rootScope.user = usersService.getUser();
         $location.path("/");
     };
     }]);
