@@ -27,6 +27,7 @@ app.directive("login", function () {
 
 app.directive("myList", function () {
     return {
-        templateUrl: 'app/templates/my-list.html'
+        templateUrl: 'app/templates/my-list.html',
+        controller: 'myListController'
     };
 });

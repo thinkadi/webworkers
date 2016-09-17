@@ -48,3 +48,13 @@ app.controller('navBarController', ['$rootScope', '$scope', '$location', 'authSe
         $location.path("/");
     };
     }]);
+
+app.controller('myListController', ['$rootScope', '$scope', '$location', 'itemsService', function ($rootScope, $scope, $location, itemsService) {
+    $scope.error = {};
+    itemsService.getItems()
+        .then(function (response) {
+            $scope.items = response;
+        }, function (errorMessage) {
+            $scope.error.message = errorMessage;
+        });
+}]);

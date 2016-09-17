@@ -1,4 +1,6 @@
 <section>
     <h2>My List</h2>
-    <div class="placeholder">---- Placeholder for My List Content----</div>
+    <div ng-repeat="item in items">
+        <span><strong>Name:</strong>&nbsp;{{item.name}}</span> <span><strong>Quantity:</strong>&nbsp;{{item.quantity}}</span> <span><strong>Store:</strong>&nbsp;{{item.store}}</span>
+    </div>
 </section>

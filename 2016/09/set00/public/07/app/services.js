@@ -9,6 +9,7 @@
     var authUrl = "/auth";
     var apiUrl = "/api"
     var usersUrl = apiUrl + "/users";
+    var itemsUrl = apiUrl + "/items"
 
     app.service('authService', ['$http', '$q', function ($http, $q) {
 
@@ -98,4 +99,27 @@
         };
 
     }]);
+
+    app.service('itemsService', ['$http', '$q', function ($http, $q) {
+
+        this.getItems = function () {
+            var deferred = $q.defer();
+            $http({
+                    method: 'GET',
+                    url: itemsUrl,
+                    headers: {
+                        "Authorization": "Bearer" + " " + user.bearerToken.token
+                    }
+                })
+                .success(function (response) {
+                    deferred.resolve(response);
+                })
+                .error(function (err, status) {
+                    deferred.reject(err);
+                });
+            return deferred.promise;
+        };
+
+    }]);
+
 })();
