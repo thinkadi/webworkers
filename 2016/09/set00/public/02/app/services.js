@@ -1,6 +1,6 @@
 app.service('authService', ['$http', '$q', function ($http, $q) {
 
-    var bearerToken;
+    var user = {};
 
     var authUrl = "/auth";
     this.register = function (user) {
@@ -39,7 +39,8 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
             $http.post(registerUrl, user)
                 .success(function (response) {
                     deferred.resolve(response);
-                    bearerToken = response.bearerToken;
+                    user.loggedIn = true;
+                    user.bearerToken = response.bearerToken;
                 })
                 .error(function (err, status) {
                     deferred.reject(err);
@@ -47,4 +48,9 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
         }
         return deferred.promise;
     };
+
+    this.getUser = function () {
+        return user;
+    };
+
 }]);

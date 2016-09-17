@@ -17,8 +17,7 @@ app.controller('loginController', ['$rootScope', '$scope', '$location', 'authSer
     $scope.login = function () {
         authService.login($scope.loginUser)
             .then(function (response) {
-                $rootScope.user = {};
-                $rootScope.user.loggedIn = true;
+                $rootScope.user = authService.getUser();
                 $location.path("/");
             }, function (errorMessage) {
                 $scope.error.message = errorMessage;

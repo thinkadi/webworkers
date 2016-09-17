@@ -65,6 +65,6 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
 
     this.getUser = function () {
         return user;
-    }
+    };
 
 }]);
