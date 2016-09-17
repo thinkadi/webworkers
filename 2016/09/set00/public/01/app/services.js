@@ -3,21 +3,21 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
     var user = {};
 
     var authUrl = "/auth";
-    this.register = function (user) {
+    this.register = function (registerUser) {
         var deferred = $q.defer();
-        if (!user.email) {
+        if (!registerUser.email) {
             deferred.reject("Email cannot be blank");
-        } else if (!user.password) {
+        } else if (!registerUser.password) {
             deferred.reject("Password cannot be blank");
-        } else if (!user.name) {
+        } else if (!registerUser.name) {
             deferred.reject("Please enter your First Name and Last Name");
-        } else if (!user.name.first) {
+        } else if (!registerUser.name.first) {
             deferred.reject("First Name cannot be blank");
-        } else if (!user.name.last) {
+        } else if (!registerUser.name.last) {
             deferred.reject("Last Name cannot be blank");
         } else {
             var registerUrl = authUrl + "/register";
-            $http.post(registerUrl, user)
+            $http.post(registerUrl, registerUser)
                 .success(function (response) {
                     deferred.resolve(response);
                 })
@@ -28,15 +28,15 @@ app.service('authService', ['$http', '$q', function ($http, $q) {
         return deferred.promise;
     };
 
-    this.login = function (user) {
+    this.login = function (loginUser) {
         var deferred = $q.defer();
-        if (!user.email) {
+        if (!loginUser.email) {
             deferred.reject("Email cannot be blank");
-        } else if (!user.password) {
+        } else if (!loginUser.password) {
             deferred.reject("Password cannot be blank");
         } else {
             var registerUrl = authUrl + "/bearer-token";
-            $http.post(registerUrl, user)
+            $http.post(registerUrl, loginUser)
                 .success(function (response) {
                     deferred.resolve(response);
                     user.loggedIn = true;
