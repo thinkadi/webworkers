@@ -67,7 +67,7 @@
             return deferred.promise;
         };
 
-}]);
+    }]);
 
     app.service('usersService', ['$http', '$q', function ($http, $q) {
 
@@ -97,5 +97,5 @@
             return deferred.promise;
         };
 
-}]);
+    }]);
 })();
