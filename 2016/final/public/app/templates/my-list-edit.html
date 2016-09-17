@@ -1,0 +1,19 @@
+<section>
+    <h2>My List Edit</h2>
+    <form ng-submit="edit()">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" ng-model="editItem.name">
+        </div>
+        <div class="field">
+            <label>Quantity</label>
+            <input type="text" ng-model="editItem.quantity">
+        </div>
+        <div class="field">
+            <label>Store</label>
+            <input type="text" ng-model="editItem.store">
+        </div>
+        <p ng-bind="error.message" class="error-message"></p>
+        <button type="submit">Edit Item</button>
+    </form>
+</section>
