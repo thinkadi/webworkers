@@ -71,3 +71,7 @@ button {
     border: 1px solid black;
     width: 50%;
 }
+
+.nav-links {
+    margin: 5px 0;
+}
